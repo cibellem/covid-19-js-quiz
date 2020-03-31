@@ -52,13 +52,17 @@ body {
 
 .img-corona {
   position: absolute;
-  top: 8vh;
-  left: 680px;
+  top: 10vh;
+  left: 700px;
 }
 img {
-  width: 50%;
+  width: 65%;
   mix-blend-mode: multiply;
   height: auto;
 
   background-repeat: no-repeat;
+}
+
+.hide {
+  display: none;
 }

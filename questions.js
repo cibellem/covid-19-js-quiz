@@ -45,5 +45,3 @@ const questions = [
       "COVID-19 vaccine was developed in Feb 2020 by Researchers at Stanford University "
   }
 ];
-
-module.import = questions;
