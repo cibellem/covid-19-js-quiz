@@ -5,7 +5,7 @@ const questions = [
     answer: "Wuhan"
   },
   {
-    title: " ___ is NOT a symptom of COVID-19",
+    title: " ______ is NOT a symptom of COVID-19",
     choices: ["Fever", "Cough", "Shortness of breath", "Hair loss", "Tirednes"],
     answer: "Hair loss"
   },
