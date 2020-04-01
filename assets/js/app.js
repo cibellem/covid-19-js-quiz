@@ -49,21 +49,32 @@ function createQuestions() {
 //Generates a ramdom div that will be displayed
 function gameStart() {
   const allDiv = document.querySelectorAll("div.hide");
-  var randomDiv = allDiv[Math.floor(allDiv.length * Math.random())];
-  if (questionsAsked.includes(randomDiv)) {
-    return;
-  } else {
-    randomDiv.classList = "show";
+  console.log(allDiv);
+  const randomDiv = allDiv[Math.floor(Math.random() * allDiv.length)];
+  console.log(randomDiv);
+  if (!questionsAsked.includes(randomDiv)) {
     questionsAsked.push(randomDiv);
+    randomDiv.classList = "show";
+  } else {
+    gameStart;
   }
-  rootDiv.addEventListener("click", e => {
-    const isButton = e.target.nodeName === "BUTTON";
-    if (!isButton) {
-      return;
-    } else randomDiv.classList = "hide";
-    gameStart();
-  });
 }
+
+rootDiv.addEventListener("click", e => {
+  const isButton = e.target.nodeName === "BUTTON";
+  if (isButton) {
+    const divToHide = document.querySelectorAll("div.show");
+
+    console.log(divToHide);
+    for (var i = 0; i < divToHide.length; i += 1) {
+      divToHide[i].style.display = "none";
+    }
+
+    gameStart();
+  } else {
+    return;
+  }
+});
 
 function questionValidation() {
   console.log("hi");
