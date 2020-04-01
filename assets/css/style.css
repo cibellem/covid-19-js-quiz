@@ -70,15 +70,21 @@ img {
 
 .hide {
   display: none;
+  position: relative;
+  margin: 40vh;
+  padding: 4px;
+  text-align: center;
+  box-shadow: 0px 2px 4px rgba(51, 49, 49, 0.404);
+  border-radius: 10px;
 }
 
 .show {
   display: block;
   position: relative;
-  margin: auto 0px;
-  padding: 20px;
+  margin: 10vh;
+  padding: 4px;
   text-align: center;
-  box-shadow: 0px 2px 4px silver;
+  box-shadow: 0px 2px 4px rgba(51, 49, 49, 0.404);
   border-radius: 10px;
 }
 
@@ -86,24 +92,32 @@ img {
   font-size: 28px;
   letter-spacing: 1px;
   color: #cacaca;
+  margin: 1.5em;
 }
 
 .button-choice {
-  padding: 18px;
+  padding: 15px 30px;
   text-align: center;
   font-size: 14px;
-  border: 1px solid rgba(0, 0, 0, 0.411);
-  margin: 10px;
-  border-radius: 12px;
-  background-color: inherit;
+  font-weight: 600;
+  background-color: rgba(192, 192, 192, 0.479);
+  border: none;
+  margin: 8px;
+  color: rgba(0, 0, 0, 0.712);
+  letter-spacing: 1px;
+  border-radius: 5px;
+  /* background-color: inherit; */
 }
 
 .button-choice:hover {
-  transition: 0.5s;
-  background-color: rgba(192, 192, 192, 0.479);
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.473);
-  border: none;
+  transition: 0.8s;
+  color: #fbfbfb;
+  border: 2px solid rgba(255, 127, 80, 0.733);
 }
 .root {
   margin: 20px;
+}
+
+.hideAnswer {
+  display: none;
 }
