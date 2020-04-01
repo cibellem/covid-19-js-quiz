@@ -25,13 +25,15 @@ body {
 }
 
 .start h4 {
-  font-size: 50px;
+  font-size: 54px;
   letter-spacing: 0.05em;
   font-style: normal;
   line-height: 68px;
   color: #cacaca;
   font-weight: normal;
-  margin: 50px 137px;
+  margin-top: 18vh;
+  margin-left: 124px;
+  margin-right: 124px;
 }
 
 .start button {
@@ -57,7 +59,7 @@ body {
 
 .img-corona {
   position: absolute;
-  top: 10vh;
+  top: 6vh;
   left: 700px;
 }
 img {
@@ -81,15 +83,16 @@ img {
 .show {
   display: block;
   position: relative;
-  margin: 10vh;
-  padding: 4px;
+  margin: 5vh;
+
   text-align: center;
+  border: rgba(92, 88, 88, 0.637) 2px solid;
 
   border-radius: 10px;
 }
 
 .title {
-  font-size: 28px;
+  font-size: 30px;
   letter-spacing: 1px;
   color: #cacaca;
   margin: 1.5em;
@@ -99,9 +102,9 @@ img {
   padding: 15px 30px;
   text-align: center;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   background-color: rgba(192, 192, 192, 0.479);
-  border: none;
+  border: 1px solid rgba(0, 0, 0, 0.726);
   margin: 8px;
   color: rgba(0, 0, 0, 0.712);
   letter-spacing: 1px;
@@ -110,7 +113,7 @@ img {
 }
 
 .button-choice:hover {
-  transition: 0.8s;
+  transition: 0.6s;
   color: #fbfbfb;
   border: 2px solid rgba(255, 127, 80, 0.733);
 }
