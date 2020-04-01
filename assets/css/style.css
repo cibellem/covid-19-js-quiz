@@ -35,7 +35,7 @@ body {
 }
 
 .start button {
-  background: #0bd43785;
+  background: #0bd43791;
   border: 3px solid #cacaca;
   padding: 20px;
   width: 300px;
@@ -52,7 +52,7 @@ body {
 }
 
 .start button:hover {
-  background-color: #55cf6f5e;
+  background-color: #55cf70;
 }
 
 .img-corona {
@@ -84,7 +84,7 @@ img {
   margin: 10vh;
   padding: 4px;
   text-align: center;
-  box-shadow: 0px 2px 4px rgba(51, 49, 49, 0.404);
+
   border-radius: 10px;
 }
 
