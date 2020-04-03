@@ -5,5 +5,5 @@ Thinking on that I decided to create this simple quiz that can be scalable as mo
 It was built with Vanilla Java Script , HTML and CSS. No Frameworks.
 Be safe!
 
-Check out here the quiz
+Screen Shot
 ![App](./assets/css/app.png) <br>
