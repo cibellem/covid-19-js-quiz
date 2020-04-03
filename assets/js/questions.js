@@ -19,7 +19,7 @@ const questions = [
       "Stay home and self-isolate from others in the household if you feel unwell",
       "All of above"
     ],
-    answer: " All of above"
+    answer: "All of above"
   },
   {
     title: "What is the recovery time for the coronavirus disease?",
@@ -30,7 +30,7 @@ const questions = [
       "6 months",
       "None"
     ],
-    answer: " 2-6 weeks depending on the severity"
+    answer: "2-6 weeks depending on the severity"
   },
   {
     title: "Which is the FALSE statement?",

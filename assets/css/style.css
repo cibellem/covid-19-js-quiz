@@ -124,3 +124,6 @@ img {
 .hideAnswer {
   display: none;
 }
+.showAnswer {
+  display: block;
+}
