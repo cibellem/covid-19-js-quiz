@@ -8,7 +8,7 @@ I think I did a great job commeting the code!
 <br> <br>
 
 <h5>Be safe!</h5>
-* NOT MOBILE RESPONSIVE YET *
+* NOT MOBILE RESPONSIVE YET * <br>
 Screen Shot
 ![App](./assets/css/app.png) <br>
 
