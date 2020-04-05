@@ -10,5 +10,9 @@ Content/Topics covered: Arrays, Arrays Methods, DOM manipulation, CSS Classes.<b
 Screen Shot
 ![App](./assets/css/app.png) <br>
 
-Check it out :
-https://cibellem.github.io/covid-19-js-quiz/
+
+
+### Link to Deployed Application
+
+Check it out!  
+[https://cibellem.github.io/covid-19-js-quiz/]
