@@ -4,29 +4,34 @@ const startButton = document.querySelector("#button-start");
 const divStart = document.getElementById("start");
 const questionsAsked = [];
 const endView = document.querySelector(".end");
+const backToStart = document.querySelector(".backToStart");
 
 //Modal
 
 const modal = document.querySelector(".modal");
-console.log(modal);
 const overlay = document.querySelector(".overlay");
-modal.style.display = "none";
 const close_button_modal = document.querySelector(".close_button_modal");
-// overlay.addEventListener("click");
-// close_button_modal.addEventListener;
+
+close_button_modal.addEventListener("click", function () {
+  modal.style.display = "none";
+});
 
 function toggleModal() {
   if ((modal.style.display = "none")) {
+    document.querySelector("p.correct").innerHTML = "Correct!";
     modal.style.display = "block";
   }
-
-  close_button_modal.addEventListener("click", function () {
-    modal.style.display = "none";
-  });
 }
+//setting up inital style display for some elements
+
+modal.style.display = "none";
+backToStart.style.display = "none";
 
 //Listeners
 startButton.addEventListener("click", setupGame);
+backToStart.addEventListener("click", function () {
+  location.reload();
+});
 
 //Games starts
 function setupGame() {
@@ -34,7 +39,6 @@ function setupGame() {
 
   createQuestions();
 }
-//cibelle montor de freitas luiz
 
 //Set up the questions creating a DIV for each
 function createQuestions() {
@@ -75,6 +79,7 @@ function createQuestions() {
 
 //Generates a ramdom div that will be displayed
 function gameStart() {
+  backToStart.style.display = "block";
   const arrayOfQuestions = [];
 
   const allDiv = document.querySelectorAll("div.hide");
@@ -116,16 +121,16 @@ rootDiv.addEventListener("click", (e) => {
     return;
   }
 });
-
+//Checks if answer is right or wrong
 function correctAnswerCheck(e) {
   const correctAnswer = document.querySelectorAll("p.hideAnswer");
-  console.log(correctAnswer);
+
   const answered = e.target.value;
-  console.log(answered);
+
   for (var i = 0; i < correctAnswer.length; i += 1) {
     if (correctAnswer[i].innerText.includes(answered)) {
-      toggleModal();
-    } else console.log("Incorrect");
+      toggleModal(e);
+    }
   }
 }
 //Final Div
@@ -155,7 +160,7 @@ function finalGame() {
   finalDiv.append(copyBtn);
   rootDiv.append(finalDiv);
 
-  //Listenner Copy url
+  //Listener Copy url
   copyBtn.addEventListener("click", function () {
     var dummy = document.createElement("input"),
       text = window.location.href;
