@@ -9,11 +9,12 @@ I think I did a great job commeting the code!
 
 <h5>Be safe!</h5>
 
-Screen Shot
+
 ![App](./assets/css/app.png) <br>
 
 
-<h2> Link to Deployed Application </h2>
+<h2> Link to Deployed Application </h2> <br>
+* NOT MOBILE RESPONSIVE YET * <br>
 
 Check it out!  
 [https://cibellem.github.io/covid-19-js-quiz/]
