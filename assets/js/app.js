@@ -5,6 +5,26 @@ const divStart = document.getElementById("start");
 const questionsAsked = [];
 const endView = document.querySelector(".end");
 
+//Modal
+
+const modal = document.querySelector(".modal");
+console.log(modal);
+const overlay = document.querySelector(".overlay");
+modal.style.display = "none";
+const close_button_modal = document.querySelector(".close_button_modal");
+// overlay.addEventListener("click");
+// close_button_modal.addEventListener;
+
+function toggleModal() {
+  if ((modal.style.display = "none")) {
+    modal.style.display = "block";
+  }
+
+  close_button_modal.addEventListener("click", function () {
+    modal.style.display = "none";
+  });
+}
+
 //Listeners
 startButton.addEventListener("click", setupGame);
 
@@ -14,16 +34,11 @@ function setupGame() {
 
   createQuestions();
 }
+//cibelle montor de freitas luiz
 
 //Set up the questions creating a DIV for each
 function createQuestions() {
-  // const answerArray = [];
-  // for (var i = 0; i < questions.length; i += 1) {
-  //   const answers = questions[i].answer;
-  //   answerArray.push(answers);
-  // }
-
-  questions.forEach(item => {
+  questions.forEach((item) => {
     const title = item.title;
     const choice = item.choices;
     const answer = item.answer;
@@ -40,12 +55,12 @@ function createQuestions() {
     titleNode.classList = "title";
     answerNode.classList = "hideAnswer";
 
-    //Apend to the HTML
+    //Append to the HTML
     divQuestion.appendChild(titleNode);
     rootDiv.appendChild(divQuestion);
     divQuestion.append(answerNode);
 
-    choice.forEach(i => {
+    choice.forEach((i) => {
       const choiceNode = document.createElement("button");
       choiceNode.innerHTML = i;
       choiceNode.classList = "button-choice";
@@ -86,18 +101,10 @@ function gameStart() {
   }
 }
 
-rootDiv.addEventListener("click", e => {
+rootDiv.addEventListener("click", (e) => {
   const isButton = e.target.nodeName === "BUTTON";
   if (isButton) {
-    const correctAnswer = document.querySelectorAll("p.hideAnswer");
-    const answered = e.target.value;
-    correctAnswer.forEach(item => {
-      if (answered === item.innerText) {
-        console.log("Correct!");
-      } else if (answered != item.innerText) {
-        console.log("Incorrect");
-      } else return;
-    });
+    correctAnswerCheck(e);
 
     const divToHide = document.querySelectorAll("div.show");
     for (var i = 0; i < divToHide.length; i += 1) {
@@ -110,27 +117,61 @@ rootDiv.addEventListener("click", e => {
   }
 });
 
-// function questionValidation(e) {
-//   const correctAnswer = document.querySelectorAll("p.hideAnswer");
-//   const answered = e.target.value;
-//   correctAnswer.forEach(item => {
-//     if (answered === item.innerText) {
-//       alert("Correct!");
-//     } else return;
-//   });
-// }
-
+function correctAnswerCheck(e) {
+  const correctAnswer = document.querySelectorAll("p.hideAnswer");
+  console.log(correctAnswer);
+  const answered = e.target.value;
+  console.log(answered);
+  for (var i = 0; i < correctAnswer.length; i += 1) {
+    if (correctAnswer[i].innerText.includes(answered)) {
+      toggleModal();
+    } else console.log("Incorrect");
+  }
+}
+//Final Div
 function finalGame() {
   const finalDiv = document.createElement("div");
   const finalH = document.createElement("h3");
-  const finalP = document.createElement("h3");
-  finalDiv.addClass = "finalDiv";
-  finalH.addClass = "finalH";
-  finalP.addClass = "finalP";
+  const finalP = document.createElement("p");
+  const playAgainBtn = document.createElement("a");
+  const copyBtn = document.createElement("a");
 
-  finalH.innerText =
+  finalDiv.classList = "finalDiv";
+  finalH.classList = "finalH";
+  finalP.classList = "finalP";
+  playAgainBtn.classList = "playAgain";
+  copyBtn.classList = "copyBtn";
+
+  copyBtn.innerText = "Copy url & Share";
+  playAgainBtn.innerText = "Play again";
+  finalP.innerText =
     " I hope this quiz helped you to learn more about this virus!Be safe!";
-  finalP.innerText = "Good Job! ";
-  finalDiv.appendChild(finalH, finalP);
+  finalH.innerText = "Good Job! ";
+
+  finalDiv.prepend(finalH);
+  finalDiv.append(finalP);
+  finalDiv.append(playAgainBtn);
+  finalDiv.append(playAgainBtn);
+  finalDiv.append(copyBtn);
   rootDiv.append(finalDiv);
+
+  //Listenner Copy url
+  copyBtn.addEventListener("click", function () {
+    var dummy = document.createElement("input"),
+      text = window.location.href;
+
+    document.body.appendChild(dummy);
+    dummy.value = text;
+    dummy.select();
+    document.execCommand("copy");
+    document.body.removeChild(dummy);
+    alert("Copied! :)");
+    location.reload();
+  });
+
+  //Listener play again
+  playAgainBtn.addEventListener("click", function () {
+    finalDiv.style.display = "none";
+    setupGame();
+  });
 }
